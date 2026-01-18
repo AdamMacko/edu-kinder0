@@ -31,7 +31,7 @@ export default function InviteParentsPage() {
   const [sending, setSending] = useState(false);
   const [banner, setBanner] = useState<{ type: "success" | "error"; text: string } | null>(null);
 
-  const API_BASE = process.env.BACKEND_URL ?? "http://localhost:5000";
+  const API_BASE = process.env.NEXT_PUBLIC_API_BASE ?? "http://localhost:5000";
 
   // Načítanie detí z databázy
   useEffect(() => {
