@@ -72,7 +72,7 @@ const keyOf = (d: Date) =>
 const monthKeyOf = (d: Date) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}`;
 
 const API_BASE =
-  process.env.BACKEND_URL ?? "http://localhost:5000";
+  process.env.NEXT_PUBLIC_API_BASE ?? "http://localhost:5000";
 
 function AttendancePageContent() {
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
