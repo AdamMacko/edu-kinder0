@@ -4,7 +4,7 @@ import Header from "@/app/components/Header";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
-const FRONT_API_BASE = process.env.BACKEND_URL ?? "http://localhost:5000";
+const FRONT_API_BASE = process.env.NEXT_PUBLIC_API_BASE ?? "http://localhost:5000";
 const API_BASE = `${FRONT_API_BASE}/api`;
 interface Child {
   id: number;
