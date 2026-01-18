@@ -228,16 +228,17 @@ export default function Header() {
                       Fotogaléria
                     </Link>
                   </li>
-                  <li className="govuk-header__navigation-item">
-                    <Link className="govuk-header__link" href="/attendance" title="Dochádzka">
-                      Dochádzka
-                    </Link>
-                  </li>
+                  
                 </>
               )}
 
               {isTeacherOrAdmin && (
                 <>
+                  <li className="govuk-header__navigation-item">
+                    <Link className="govuk-header__link" href="/attendance" title="Dochádzka">
+                      Dochádzka
+                    </Link>
+                  </li>
                   <li className="govuk-header__navigation-item">
                     <Link className="govuk-header__link" href="/kids" title="Deti">
                       Triedy
