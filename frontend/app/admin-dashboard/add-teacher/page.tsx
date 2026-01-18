@@ -25,7 +25,7 @@ export default function InviteTeachersPage() {
     const [sending, setSending] = useState(false);
     const [banner, setBanner] = useState<{ type: "success" | "error"; text: string } | null>(null);
 
-    const API_BASE = process.env.BACKEND_URL ?? "http://localhost:5000";
+    const API_BASE = process.env.NEXT_PUBLIC_API_BASE ?? "http://localhost:5000";
 
     const normalize = (v: string) => v.trim().toLowerCase();
     const isValidEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
