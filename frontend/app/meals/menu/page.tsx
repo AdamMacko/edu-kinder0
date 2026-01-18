@@ -7,7 +7,7 @@ import Link from "next/link";
 async function getUserSSR() {
   try {
     const cookieHeader = (await headers()).get("cookie") ?? "";
-    const backend = process.env.BACKEND_URL ?? "http://localhost:5000";
+    const backend = process.env.NEXT_PUBLIC_API_BASE ?? "http://localhost:5000";
 
     const r = await fetch(`${backend}/api/auth/me`, {
       method: "GET",
