@@ -9,7 +9,7 @@ async function getUserSSR() {
     const cookieHeader = (await headers()).get("cookie") ?? "";
     const backend = process.env.NEXT_PUBLIC_API_BASE ?? "http://localhost:5000";
 
-    const r = await fetch(`/api/auth/me`, {
+    const r = await fetch(`${backend}/api/auth/me`, {
       method: "GET",
       headers: { cookie: cookieHeader },
       cache: "no-store",
