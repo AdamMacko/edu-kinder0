@@ -9,7 +9,7 @@ type Meals = Record<CourseKey, boolean>;
 type Child = { id: string; name: string };
 
 const API_BASE =
-  process.env.BACKEND_URL ?? "http://localhost:5000";
+  process.env.NEXT_PUBLIC_API_BASE ?? "http://localhost:5000";
 
 const MY_CHILDREN_URL = `${API_BASE}/api/child/mine`;
 
