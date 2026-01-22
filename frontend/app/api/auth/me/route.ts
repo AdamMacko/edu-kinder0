@@ -1,7 +1,7 @@
 
 import { NextResponse } from "next/server";
 import { headers } from "next/headers";
-
+export const dynamic = "force-dynamic";
 const BACKEND_URL = process.env.BACKEND_URL ?? "http://localhost:5000";
 
 export async function GET() {
