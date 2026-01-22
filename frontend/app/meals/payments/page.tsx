@@ -8,7 +8,7 @@ import { QRCodeSVG } from "qrcode.react";
 type Role = "ADMIN" | "TEACHER" | "PARENT" | string;
 
 const FRONT_API_BASE = process.env.NEXT_PUBLIC_API_BASE ?? "http://localhost:5000";
-const API_BASE = `${FRONT_API_BASE}/api`;
+const API_BASE = "/api";
 
 
 type Tab = "ORDERS" | "PAYMENTS" | "MANAGE";
