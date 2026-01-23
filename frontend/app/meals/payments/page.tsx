@@ -273,10 +273,16 @@ export default function MealsPaymentsPage() {
                     credentials: "include",
                 });
 
-                const json = await res.json();
+                   const text = await res.text();
+                let json: any = null;
+                try { json = text ? JSON.parse(text) : null; } catch { }
 
-                if (!res.ok || !json.success) {
-                    throw new Error(json.error || "Nepodarilo sa načítať predpisy.");
+                if (!res.ok) {
+                    throw new Error(json?.error || json?.message || `HTTP ${res.status}`);
+                }
+
+                if (!json?.success) {
+                    throw new Error(json?.error || "Nepodarilo sa načítať predpisy.");
                 }
 
                 const raw: RawMealStatementFromApi[] = Array.isArray(json.data)
