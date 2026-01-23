@@ -15,9 +15,11 @@ async function proxy(req: Request, pathParts: string[] | undefined) {
     }
 
     const parts = Array.isArray(pathParts) ? pathParts : [];
-   if (parts.length === 0) {
-  return NextResponse.json({ success: false }, { status: 404 });
+  if (!parts || parts.length === 0) {
+  // Next.js prefetch / HEAD / metadata request – ignorujeme
+  return new NextResponse(null, { status: 204 });
 }
+
 
 
     const cookie = (await headers()).get("cookie") ?? "";
