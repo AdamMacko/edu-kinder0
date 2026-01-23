@@ -15,12 +15,10 @@ async function proxy(req: Request, pathParts: string[] | undefined) {
     }
 
     const parts = Array.isArray(pathParts) ? pathParts : [];
-    if (parts.length === 0) {
-      return NextResponse.json(
-        { success: false, error: "Missing path parts" },
-        { status: 400 }
-      );
-    }
+   if (parts.length === 0) {
+  return NextResponse.json({ success: false }, { status: 404 });
+}
+
 
     const cookie = (await headers()).get("cookie") ?? "";
     const url = new URL(req.url);
